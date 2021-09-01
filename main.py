@@ -29,7 +29,7 @@ class VideoStream:
         ret = self.stream.set(4, resolution[1])
         # Read first frame from the stream
         (self.grabbed, self.frame) = self.stream.read()
-        self.img_size = np.asarray(self.frame.shape)[0:2]
+        self.img_size = 1024 #np.asarray(self.frame.shape)[0:2] # sometimes, got error, just gave a fixed value.
 
         # Variable to control when the camera is stopped
         self.stopped = False
